@@ -4,8 +4,7 @@ import BlogForm from "@/components/BlogForm";
 import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
-const serverUrl =  'http://localhost:3000';
-
+const serverUrl = isProduction ? process.env.NEXT_PUBLIC_SERVER_URL : 'http://localhost:3000';
 
 const CreateBlog = ({project}) => {
 
