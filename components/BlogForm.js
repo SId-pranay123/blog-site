@@ -64,7 +64,10 @@ const BlogForm = ({ type, form,setForm, submitting, handleSubmit,handleChangeIma
                     leftIcon={submitting ? "" : "/plus.svg"}
                     submitting={submitting}
                 /> */}
-        <button type="submit">Create</button>
+        <button type="submit" disabled={submitting || false} className={`flexCenter gap-3 px-3 py-3 text-white bg-black rounded-xl text-sm font-medium max-md:w-full`} >
+          Create
+          {submitting && ("...")}
+        </button>
       </div>
     </form>
   );

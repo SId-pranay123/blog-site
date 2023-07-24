@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 
 const Blog = ({params:{id}}) => {
-    const [blog,setBlog] = useState();
+    const [blog,setBlog] = useState(null);
     useEffect(() => {
         const fetchblog = async () => {
             const response = await fetch(`/api/blogs/${id}`);

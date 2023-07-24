@@ -9,9 +9,9 @@ const Feed = () => {
 
 
   const fetchPosts = async () => {
-    const response = await fetch("/api/blogs" );
+    const response = await fetch("/api/blogs");
     const { blogs: data } = await response.json();
-
+    // console.log(data);
     setAllBlogs(data);
   };
 
