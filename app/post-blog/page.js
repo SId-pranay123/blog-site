@@ -5,9 +5,7 @@ import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
 
-const isProduction = process.env.NODE_ENV === 'production';
 
-const serverUrl = isProduction ? process.env.NEXT_PUBLIC_SERVER_URL : 'http://localhost:3000';
 
 const CreateBlog = ({project}) => {
 
@@ -31,7 +29,7 @@ const CreateBlog = ({project}) => {
 
   const uploadImage = async (imagePath) => {
     try {
-      const response = await fetch(`${serverUrl}/api/upload`, {
+      const response = await fetch(`/api/upload`, {
         method: "POST",
         body: JSON.stringify({
           path: imagePath,
