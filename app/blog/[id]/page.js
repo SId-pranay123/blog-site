@@ -8,7 +8,7 @@ const Blog = ({params:{id}}) => {
     const [blog,setBlog] = useState();
     useEffect(() => {
         const fetchblog = async () => {
-            const response = await fetch(`/api/blogs/${id}`, {cache:'no-store'});
+            const response = await fetch(`/api/blogs/${id}`);
             const data = await response.json();
       
             setBlog(data);
