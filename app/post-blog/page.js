@@ -34,6 +34,8 @@ const CreateBlog = ({project}) => {
         body: JSON.stringify({
           path: imagePath,
         }),
+      },{
+        cache: "no-store",
       });
       return response.json();
     } catch (err) {
@@ -83,6 +85,8 @@ const CreateBlog = ({project}) => {
             idea: form.idea,
             image:imageUrl.url,
             category: form.category
+          },{
+            cache: "no-store",
           })
       })
       
